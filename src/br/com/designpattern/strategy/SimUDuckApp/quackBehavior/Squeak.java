@@ -1,4 +1,4 @@
-package br.com.designpattern.ducksExample.quackBehavior;
+package br.com.designpattern.strategy.SimUDuckApp.quackBehavior;
 
 public class Squeak implements QuackBehavior {
 

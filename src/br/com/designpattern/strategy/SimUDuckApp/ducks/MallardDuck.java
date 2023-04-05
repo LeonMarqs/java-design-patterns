@@ -1,7 +1,7 @@
-package br.com.designpattern.ducksExample.ducks;
+package br.com.designpattern.strategy.SimUDuckApp.ducks;
 
-import br.com.designpattern.ducksExample.flyBehavior.FlyWithWings;
-import br.com.designpattern.ducksExample.quackBehavior.Quack;
+import br.com.designpattern.strategy.SimUDuckApp.flyBehavior.FlyWithWings;
+import br.com.designpattern.strategy.SimUDuckApp.quackBehavior.Quack;
 
 public class MallardDuck extends Duck {
 

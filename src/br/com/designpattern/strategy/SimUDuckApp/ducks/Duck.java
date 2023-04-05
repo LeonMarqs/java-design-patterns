@@ -1,7 +1,7 @@
-package br.com.designpattern.ducksExample.ducks;
+package br.com.designpattern.strategy.SimUDuckApp.ducks;
 
-import br.com.designpattern.ducksExample.flyBehavior.FlyBehavior;
-import br.com.designpattern.ducksExample.quackBehavior.QuackBehavior;
+import br.com.designpattern.strategy.SimUDuckApp.flyBehavior.FlyBehavior;
+import br.com.designpattern.strategy.SimUDuckApp.quackBehavior.QuackBehavior;
 
 public abstract class Duck {
 	FlyBehavior flyBehavior;

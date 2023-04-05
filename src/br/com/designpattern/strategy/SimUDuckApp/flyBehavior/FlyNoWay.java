@@ -1,4 +1,4 @@
-package br.com.designpattern.ducksExample.flyBehavior;
+package br.com.designpattern.strategy.SimUDuckApp.flyBehavior;
 
 public class FlyNoWay implements FlyBehavior {
 
