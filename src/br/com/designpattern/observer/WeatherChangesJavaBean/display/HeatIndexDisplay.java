@@ -1,21 +1,27 @@
 package br.com.designpattern.observer.WeatherChangesJavaBean.display;
 
-import br.com.designpattern.observer.WeatherChangesApp.observer.Observer;
-import br.com.designpattern.observer.WeatherChangesApp.subject.WeatherData;
+import static br.com.designpattern.observer.WeatherChangesJavaBean.subject.WeatherData.HUMIDITY;
+import static br.com.designpattern.observer.WeatherChangesJavaBean.subject.WeatherData.TEMPERATURE;
 
-public class HeatIndexDisplay implements Observer, DisplayElement {
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.List;
+
+import br.com.designpattern.observer.WeatherChangesJavaBean.subject.WeatherData;
+
+public class HeatIndexDisplay implements PropertyChangeListener, DisplayElement {
 
 	float heatIndex = 0.0f;
-	private WeatherData weatherData;
+	private final List<String> PROPERTIES_THAT_CHANGES = List.of(TEMPERATURE, HUMIDITY);
 
-	public HeatIndexDisplay(WeatherData weatherData) {
-		this.setWeatherData(weatherData);
-		weatherData.registerObserver(this);
-	}
-
-	public void update(Float t, Float rh, Float pressure) {
-		heatIndex = computeHeatIndex(t, rh);
-		display();
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		if (!PROPERTIES_THAT_CHANGES.contains(evt.getPropertyName())) {
+			return;
+		}
+		WeatherData weatherData = (WeatherData) evt.getSource();
+		heatIndex = this.computeHeatIndex(weatherData.getTemperature(), weatherData.getHumidity());
+		this.display();
 	}
 
 	private float computeHeatIndex(float t, float rh) {
@@ -30,14 +36,6 @@ public class HeatIndexDisplay implements Observer, DisplayElement {
 
 	public void display() {
 		System.out.println("Heat index is " + heatIndex);
-	}
-
-	public WeatherData getWeatherData() {
-		return weatherData;
-	}
-
-	public void setWeatherData(WeatherData weatherData) {
-		this.weatherData = weatherData;
 	}
 
 }

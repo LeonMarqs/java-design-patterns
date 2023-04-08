@@ -1,32 +1,34 @@
 package br.com.designpattern.observer.WeatherChangesJavaBean.display;
 
-import br.com.designpattern.observer.WeatherChangesApp.observer.Observer;
-import br.com.designpattern.observer.WeatherChangesApp.subject.WeatherData;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
-public class StatisticsDisplay implements Observer, DisplayElement {
+public class StatisticsDisplay implements PropertyChangeListener, DisplayElement {
 
 	private Float maxTemp = 0.0f;
 	private Float minTemp = 200f;
-	private Float tempSum= 0.0f;
+	private Float tempSum = 0.0f;
 	private int numReadings;
-	private WeatherData weatherData;
 
-	public StatisticsDisplay(WeatherData weatherData) {
-		this.setWeatherData(weatherData);
-		weatherData.registerObserver(this);
-	}
-	
 	@Override
-	public void update(Float temp, Float humidity, Float pressure) {
-		tempSum += temp;
+	public void propertyChange(PropertyChangeEvent evt) {
+		if (!evt.getPropertyName()
+				.equals(br.com.designpattern.observer.WeatherChangesJavaBean.subject.WeatherData.TEMPERATURE)) {
+			return;
+		}
+		this.update((Float) evt.getNewValue());
+	}
+
+	public void update(Float temperature) {
+		tempSum += temperature;
 		numReadings++;
 
-		if (temp > maxTemp) {
-			maxTemp = temp;
+		if (temperature > maxTemp) {
+			this.maxTemp = temperature;
 		}
- 
-		if (temp < minTemp) {
-			minTemp = temp;
+
+		if (temperature < minTemp) {
+			this.minTemp = temperature;
 		}
 
 		display();
@@ -34,16 +36,7 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 
 	@Override
 	public void display() {
-		System.out.println("Avg/Max/Min temperature = " + (tempSum / numReadings)
-			+ "/" + maxTemp + "/" + minTemp);
-	}
-
-	public WeatherData getWeatherData() {
-		return weatherData;
-	}
-
-	public void setWeatherData(WeatherData weatherData) {
-		this.weatherData = weatherData;
+		System.out.println("Avg/Max/Min temperature = " + (tempSum / numReadings) + "/" + maxTemp + "/" + minTemp);
 	}
 
 }

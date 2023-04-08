@@ -1,16 +1,21 @@
 package br.com.designpattern.observer.WeatherChangesJavaBean.display;
 
-import br.com.designpattern.observer.WeatherChangesApp.observer.Observer;
-import br.com.designpattern.observer.WeatherChangesApp.subject.WeatherData;
+import static br.com.designpattern.observer.WeatherChangesJavaBean.subject.WeatherData.PRESSURE;
 
-public class ForecastDisplay implements Observer, DisplayElement {
-	private Float currentPressure = 29.92f;
-	private Float lastPressure;
-	private WeatherData weatherData;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
-	public ForecastDisplay(WeatherData weatherData) {
-		this.setWeatherData(weatherData);
-		weatherData.registerObserver(this);
+public class ForecastDisplay implements PropertyChangeListener, DisplayElement {
+	private float currentPressure = 29.92f;
+	private float lastPressure;
+
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		if (PRESSURE.equals(evt.getPropertyName())) {
+			this.lastPressure = currentPressure;
+			this.currentPressure = (float) evt.getNewValue();
+			display();
+		}
 	}
 
 	@Override
@@ -23,21 +28,6 @@ public class ForecastDisplay implements Observer, DisplayElement {
 		} else {
 			System.out.println("Watch out for cooler, rainy weather");
 		}
-	}
-
-	@Override
-	public void update(Float temp, Float humidity, Float pressure) {
-		this.lastPressure = currentPressure;
-		this.currentPressure = pressure;
-		display();
-	}
-
-	public WeatherData getWeatherData() {
-		return weatherData;
-	}
-
-	public void setWeatherData(WeatherData weatherData) {
-		this.weatherData = weatherData;
 	}
 
 }

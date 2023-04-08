@@ -5,6 +5,10 @@ import java.beans.PropertyChangeSupport;
 
 public class WeatherData {
 
+	public static final String TEMPERATURE = "temperature";
+	public static final String HUMIDITY = "humidity";
+	public static final String PRESSURE = "pressure";
+	
 	private float temperature;
 	private float humidity;
 	private float pressure;
