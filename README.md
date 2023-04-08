@@ -6,3 +6,4 @@
 
 ## TOPICS
 * [Strategy Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/strategy)
+* [Observer Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/observer)
