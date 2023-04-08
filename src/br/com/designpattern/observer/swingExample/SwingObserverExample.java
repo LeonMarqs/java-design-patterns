@@ -32,8 +32,8 @@ public class SwingObserverExample extends JFrame {
 
 		JButton button = new JButton("Should I do it?");
 
-		button.addActionListener(new AngelListener());
-		button.addActionListener(new DevilListener());
+		button.addActionListener(event -> System.out.println("Don't do it, you might regret it!"));
+		button.addActionListener(event -> System.out.println("Come on, do it!"));
 
 		contentPane.add(button);
 		setContentPane(contentPane);
