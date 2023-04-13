@@ -9,10 +9,10 @@ import br.com.designpattern.observer.WeatherChangesApp.subject.WeatherData;
 public class WeatherStation {
 	public static void main(String[] args) {
 		WeatherData weatherData = new WeatherData();
-		CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
-		StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
-		ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
-		HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+		new CurrentConditionsDisplay(weatherData);
+		new StatisticsDisplay(weatherData);
+		new ForecastDisplay(weatherData);
+		new HeatIndexDisplay(weatherData);
 
 		weatherData.setMeasurements(20f, 66f, 30.4f);
 		weatherData.setMeasurements(34f, 54f, 21.4f);
