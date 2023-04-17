@@ -1,4 +1,4 @@
-package br.com.designpattern.decorator.starbuzzcoffe.javaio;
+package br.com.designpattern.decorator.javaio;
 
 import java.io.FilterInputStream;
 import java.io.IOException;
