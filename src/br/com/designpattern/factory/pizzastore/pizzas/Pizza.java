@@ -1,23 +1,22 @@
 package br.com.designpattern.factory.pizzastore.pizzas;
 
-import java.util.ArrayList;
-import java.util.List;
+import br.com.designpattern.factory.pizzastore.pizzas.ingredients.interfaces.Cheese;
+import br.com.designpattern.factory.pizzastore.pizzas.ingredients.interfaces.Clams;
+import br.com.designpattern.factory.pizzastore.pizzas.ingredients.interfaces.Dough;
+import br.com.designpattern.factory.pizzastore.pizzas.ingredients.interfaces.Pepperoni;
+import br.com.designpattern.factory.pizzastore.pizzas.ingredients.interfaces.Sauce;
+import br.com.designpattern.factory.pizzastore.pizzas.ingredients.interfaces.Veggies;
 
 public abstract class Pizza {
 	protected String name;
-	protected String dough;
-	protected String sauce;
-	protected List<String> toppings = new ArrayList<String>();
+	protected Sauce sauce;
+	protected Dough dough;
+	protected Veggies[] veggies;
+	protected Cheese cheese;
+	protected Pepperoni pepperoni;
+	protected Clams clam;
 
-	public void prepare() {
-		System.out.println("Preparing " + name);
-		System.out.println("Tossing dough...");
-		System.out.println("Adding sauce...");
-		System.out.println("Adding toppings: ");
-		toppings.forEach(topping -> {
-			System.out.println("   " + topping);
-		});
-	}
+	public abstract void prepare();
 
 	public void bake() {
 		System.out.println("Bake for 25 minutes at 350");
@@ -33,5 +32,9 @@ public abstract class Pizza {
 
 	public String getName() {
 		return this.name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 }
