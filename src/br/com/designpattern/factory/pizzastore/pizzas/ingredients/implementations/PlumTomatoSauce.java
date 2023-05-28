@@ -1,0 +1,7 @@
+package br.com.designpattern.factory.pizzastore.pizzas.ingredients.implementations;
+
+import br.com.designpattern.factory.pizzastore.pizzas.ingredients.interfaces.Sauce;
+
+public class PlumTomatoSauce implements Sauce {
+
+}
