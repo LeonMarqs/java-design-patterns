@@ -8,3 +8,5 @@
 * [Strategy Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/strategy)
 * [Observer Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/observer)
 * [Decorator Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/decorator)
+* [Factory Method/Abstract Factory Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/factory)
+* [Singleton Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/singleton)
