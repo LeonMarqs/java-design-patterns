@@ -2,22 +2,21 @@ package br.com.designpattern.command.commands;
 
 import br.com.designpattern.command.receiver.Light;
 
-public class LightOnCommand implements Command {
+public class LightOffCommand implements Command {
 	
 	private Light light;
 	
-	public LightOnCommand(Light light) {
+	public LightOffCommand(Light light) {
 		this.light = light;
 	}
 
 	@Override
 	public void execute() {
-		light.on();
-	}
-
-	@Override
-	public void undo() {
 		light.off();
 	}
-
+	
+	@Override
+	public void undo() {
+		light.on();
+	}
 }

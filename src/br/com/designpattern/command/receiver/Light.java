@@ -1,11 +1,17 @@
 package br.com.designpattern.command.receiver;
 
 public class Light {
-	public void on() {
-		System.out.println("Light is on");
+	private ReceiverLocationEnum location;
+
+	public Light(ReceiverLocationEnum location) {
+		this.location = location;
 	}
-	
+
+	public void on() {
+		System.out.println(location.toString() + " light is on");
+	}
+
 	public void off() {
-		System.out.println("Light is off");
+		System.out.println(location.toString() + " light is off");
 	}
 }
