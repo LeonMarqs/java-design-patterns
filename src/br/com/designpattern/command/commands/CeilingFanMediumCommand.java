@@ -3,12 +3,12 @@ package br.com.designpattern.command.commands;
 import br.com.designpattern.command.receiver.CeilingFan;
 import br.com.designpattern.command.receiver.CeilingFan.FanSpeed;
 
-public class CeilingFanHighCommand implements Command {
+public class CeilingFanMediumCommand implements Command {
 
 	private CeilingFan fan;
 	private FanSpeed fanPreviousSpeed;
 
-	public CeilingFanHighCommand(CeilingFan fan) {
+	public CeilingFanMediumCommand(CeilingFan fan) {
 		super();
 		this.fan = fan;
 	}
@@ -16,7 +16,7 @@ public class CeilingFanHighCommand implements Command {
 	@Override
 	public void execute() {
 		fanPreviousSpeed = fan.getSpeed();
-		fan.setHigh();
+		fan.setMedium();
 	}
 
 	@Override
