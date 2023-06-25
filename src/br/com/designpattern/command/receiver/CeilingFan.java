@@ -29,7 +29,7 @@ public class CeilingFan {
 	
 	public void setMedium() {
 		this.setSpeed(FanSpeed.MEDIUM);
-		System.out.println(location.toString() + " ceiling fan speed is high");
+		System.out.println(location.toString() + " ceiling fan speed is medium");
 	}
 	
 	public void setHigh() {
