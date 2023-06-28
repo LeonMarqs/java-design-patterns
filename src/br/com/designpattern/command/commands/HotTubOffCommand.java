@@ -16,9 +16,9 @@ public class HotTubOffCommand implements Command {
 		hotTub.off();
 	}
 
-	@Override
-	public void undo() {
-		hotTub.on();
-	}
+//	@Override
+//	public void undo() {
+//		hotTub.on();
+//	}
 
 }
