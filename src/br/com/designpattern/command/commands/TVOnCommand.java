@@ -16,9 +16,8 @@ public class TVOnCommand implements Command {
 		tv.on();
 	}
 
-	@Override
-	public void undo() {
-		tv.off();
-	}
-	// TODO: TVOFFcommand e HotTub on/off commands
+//	@Override
+//	public void undo() {
+//		tv.off();
+//	}
 }

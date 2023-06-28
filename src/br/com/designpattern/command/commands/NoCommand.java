@@ -6,8 +6,8 @@ public class NoCommand implements Command {
 	public void execute() {
 	}
 
-	@Override
-	public void undo() {
-	}
+//	@Override
+//	public void undo() {
+//	}
 
 }

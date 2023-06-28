@@ -1,7 +1,6 @@
 package br.com.designpattern.command.invoker;
 
 import br.com.designpattern.command.commands.Command;
-import br.com.designpattern.command.commands.NoCommand;
 
 public class RemoteControl {
 	Command[] onCommands;
@@ -12,14 +11,15 @@ public class RemoteControl {
 		onCommands = new Command[7];
 		offCommands = new Command[7];
 
-		Command noCommand = new NoCommand();
-
 		for (int i = 0; i < 7; i++) {
-			onCommands[i] = noCommand;
-			offCommands[i] = noCommand;
+			onCommands[i] = () -> {
+			};
+			offCommands[i] = () -> {
+			};
 		}
 
-		lastCommandExecuted = noCommand;
+		lastCommandExecuted = () -> {
+		};
 	}
 
 	public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -40,7 +40,7 @@ public class RemoteControl {
 	}
 
 	public void undoButtonWasPushed() {
-		lastCommandExecuted.undo();
+//		lastCommandExecuted.undo();
 	}
 
 	@Override

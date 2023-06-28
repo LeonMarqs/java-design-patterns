@@ -16,9 +16,9 @@ public class TVOffCommand implements Command {
 		tv.off();
 	}
 
-	@Override
-	public void undo() {
-		tv.on();
-	}
+//	@Override
+//	public void undo() {
+//		tv.on();
+//	}
 
 }

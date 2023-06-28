@@ -16,9 +16,9 @@ public class CeilingFanOnCommand implements Command {
 		fan.on();
 	}
 
-	@Override
-	public void undo() {
-		fan.setOff();
-	}
+//	@Override
+//	public void undo() {
+//		fan.setOff();
+//	}
 
 }
