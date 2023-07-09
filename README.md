@@ -10,3 +10,5 @@
 * [Decorator Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/decorator)
 * [Factory Method/Abstract Factory Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/factory)
 * [Singleton Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/singleton)
+* [Command Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/command)
+* [Adapter Pattern](https://github.com/LeonMarqs/java-design-patterns/tree/main/src/br/com/designpattern/adapter)
