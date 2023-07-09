@@ -1,7 +1,6 @@
 package br.com.designpattern.adapter.duck.adapters;
 
 import java.util.Random;
-
 import br.com.designpattern.adapter.duck.Duck;
 import br.com.designpattern.adapter.duck.Turkey;
 
@@ -15,7 +14,7 @@ public class DuckAdapter implements Turkey {
 		this.duck = duck;
 		this.rand = new Random();
 	}
-
+  
 	@Override
 	public void gobble() {
 		duck.fly();
